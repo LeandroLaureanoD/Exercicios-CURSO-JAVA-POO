@@ -45,8 +45,8 @@ public class Main {
         mediaAltura = sum / tamanho;
         System.out.printf("Altura Média: %.2f%n",mediaAltura);
 
-        int totalIdades = (cont * 100) / tamanho;
-        System.out.println("Pessoas com menos de 16 anos: " + totalIdades + "%");
+        int porcentagemIdades = (cont * 100) / tamanho;
+        System.out.println("Pessoas com menos de 16 anos: " + porcentagemIdades + "%");
         //Arrays.stream(armazenaNome).forEach(System.out::println);//Imprimir elementos do Array
         for (int i = 0; i < cont; i++) {
             System.out.println(armazenaNome[i]);

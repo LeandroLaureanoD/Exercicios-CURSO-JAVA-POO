@@ -30,18 +30,21 @@ public class Main {
             if(roomBusy != equalRooms ){
                 equalRooms = roomBusy;
             }else {
-                System.out.println();
-                System.out.println("WARNING: 'Room " + roomBusy + " it's already busy', choose another room" );
-                System.out.println("Rent #" + (i + 1));
-                sc.nextLine();
-                System.out.print("Name: ");
-                name = sc.nextLine();
+                //While verifica novamente até ele digitar um quarto desocupado
+                while (roomBusy == equalRooms){
+                    System.out.println();
+                    System.out.println("WARNING: 'Room " + roomBusy + " it's already busy', choose another room" );
+                    System.out.println("Rent #" + (i + 1));
+                    sc.nextLine();
+                    System.out.print("Name: ");
+                    name = sc.nextLine();
 
-                System.out.print("Email: ");
-                email = sc.nextLine();
+                    System.out.print("Email: ");
+                    email = sc.nextLine();
 
-                System.out.print("Room: ");
-                roomBusy = sc.nextInt();
+                    System.out.print("Room: ");
+                    roomBusy = sc.nextInt();
+                }
             }
             roomVetor[roomBusy] = new Room(name, email, roomBusy);
 

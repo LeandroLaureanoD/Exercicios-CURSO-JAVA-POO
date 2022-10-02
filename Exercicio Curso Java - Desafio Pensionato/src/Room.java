@@ -8,17 +8,7 @@ public class Room {
         this.email = email;
         this.room = room;
     }
-    //Getter and Setter
-    public String getNome() {
-        return nome;
-    }
-    public String getEmail() {
-        return email;
-    }
-    public int getRoom() {
-        return room;
-    }
-
+    
     @Override
     public String toString() {
         return room + ":" + " " + nome + ", " + email;

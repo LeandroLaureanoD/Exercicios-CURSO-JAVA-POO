@@ -31,7 +31,7 @@ public class Main {
 
             employeesVetor[i] = new Employee(id, name, salary);
         }
-
+        System.out.println();
         System.out.print("Enter the employee id that will have salary increase ? ");
         idSalary = sc.nextInt();
         for (Employee Employee : employeesVetor) {

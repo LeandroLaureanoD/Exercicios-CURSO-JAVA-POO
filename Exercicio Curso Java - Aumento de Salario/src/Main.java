@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -8,19 +7,18 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("How many employees will be registered ? ");
-        int qtdQuartos = sc.nextInt();
+        int quantityRoom = sc.nextInt();
         int id;
-        double salary;
         int idSalary;
-        double porcentage;
-        double totalPorcentage;
+        double salary;
+        int idIncreaseSalary = 0;
         String name;
 
-        Funcionario[] employeesVetor = new Funcionario[qtdQuartos];
+        Employee[] employeesVetor = new Employee[quantityRoom];
 
-        for (int i = 0; i < qtdQuartos; i++) {
+        for (int i = 0; i < quantityRoom; i++) {
             System.out.println("Emplyoee #" + (i + 1));
-            sc.nextLine();
+
             System.out.print("Id: ");
             id = sc.nextInt();
 
@@ -31,25 +29,26 @@ public class Main {
             System.out.print("Salary: ");
             salary = sc.nextInt();
 
-            employeesVetor[i] = new Funcionario(id, name, salary);
-
+            employeesVetor[i] = new Employee(id, name, salary);
         }
+
         System.out.print("Enter the employee id that will have salary increase ? ");
         idSalary = sc.nextInt();
-        for (Funcionario funcionario : employeesVetor) {
-            if (idSalary == funcionario.getId()) {
+        for (Employee Employee : employeesVetor) {
+            if (idSalary == Employee.getId()) {
                 System.out.print("Enter the percentage ? ");
-                porcentage = sc.nextInt();
-                totalPorcentage = (funcionario.getSalary() * porcentage) / 100;
-                funcionario.setSalary(funcionario.getSalary() + totalPorcentage);
-            } else {
-                System.out.print("wrong employee id ! ");
+                Employee.increaseSalary(sc.nextInt());
+                idIncreaseSalary = Employee.getId();
             }
+        }
+        if (idSalary != idIncreaseSalary){
+            System.out.println("this id does not exist!");
         }
         System.out.println();
         System.out.println("List of employees: ");
-        for (Funcionario funcionario : employeesVetor) {
-            System.out.println(funcionario);
+        for (Employee employee : employeesVetor) {
+            System.out.print(employee);
         }
+        sc.close();
     }
 }

@@ -18,17 +18,13 @@ public class Main {
         System.out.print("Birth date (DD/MM/YYYY): ");
         String date = sc.nextLine();
 
-        Date dataHoraAtual = new Date();
-        String dateNow = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(dataHoraAtual);
-
         Date format = f.parse(date);
-        Date dateNowH = f.parse(dateNow);
 
         System.out.println("ENTER ORDER DATA: ");
         System.out.print("Status: ");
         String orderStatus = sc.nextLine();
 
-        Order order = new Order(dateNowH, OrderStatus.valueOf(orderStatus), new Client(name, email, format));
+        Order order = new Order(new Date(), OrderStatus.valueOf(orderStatus), new Client(name, email, format));
 
         System.out.print("How many items to this order? ");
         int n = sc.nextInt();
